@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .yorum-kutusu {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #f6f6f6;
+      border-left: 5px solid #1a5d3d;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      font-style: italic;
+      color: #333;
+      text-align: left;
+      min-height: 120px;
+      transition: opacity 0.5s ease;
+    }
+
+    .yorum-isim {
+      margin-top: 10px;
+      font-weight: bold;
+      text-align: right;
+      color: #1a5d3d;
+    }
+  </style>
+</head>
+<body>
+  <div id="yorum-alani" class="yorum-kutusu">
+    <div id="yorum-metin">“Zeyd Hoca sayesinde eşimle yeniden bir araya geldik.”</div>
+    <div id="yorum-isim" class="yorum-isim">– Fatma A.</div>
+  </div>
+
+  <script>
+    const yorumlar = [
+      { metin: "“Zeyd Hoca sayesinde eşimle yeniden bir araya geldik.”", isim: "– Fatma A." },
+      { metin: "“Uzun süredir üzerimdeki ağırlık geçti, içim ferahladı.”", isim: "– Hasan K." },
+      { metin: "“Ne yaptıysam çözemedim, ama bu sefer gerçekten oldu.”", isim: "– Elif Y." },
+      { metin: "“İlk başta tereddüt ettim ama sonuç harikaydı.”", isim: "– Murat T." },
+      { metin: "“Aileme yapılan ayrılık büyüsü tamamen temizlendi.”", isim: "– Ayşe S." },
+      { metin: "“Evimizin içindeki kavga ortamı kısa sürede düzeldi.”", isim: "– Selim G." },
+      { metin: "“İç huzurum geri geldi, Allah razı olsun.”", isim: "– Nurgül D." },
+      { metin: "“İş yerinde sürekli terslik vardı, şimdi her şey yolunda.”", isim: "– Orhan Z." },
+      { metin: "“Eşim bambaşka biri gibiydi, şimdi gözümde eski haline döndü.”", isim: "– Emine K." },
+      { metin: "“3 yıldır çözemediğim dert için bir günde ferahladım.”", isim: "– Ahmet E." },
+      { metin: "“Gerçekten rahmani bir uygulamaymış, etkisini kısa sürede gördüm.”", isim: "– Zeynep U." },
+      { metin: "“Sadece dua ile bu kadar güzel sonuç alınması beni çok etkiledi.”", isim: "– Mehmet S." }
+    ];
+
+    let aktifIndex = 0;
+    setInterval(() => {
+      aktifIndex = (aktifIndex + 1) % yorumlar.length;
+      document.getElementById("yorum-metin").innerText = yorumlar[aktifIndex].metin;
+      document.getElementById("yorum-isim").innerText = yorumlar[aktifIndex].isim;
+    }, 20000);
+  </script>
+</body>
+</html>
